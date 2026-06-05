@@ -102,7 +102,6 @@ type_text_tool = llm.Tool(
 
 def type_text_handler(text: str) -> str:
     """Type text"""
-    # Replace spaces with %s for adb command
     formatted_text = text.replace(" ", "%s")
     command = f"input text {formatted_text}"
     result = run_adb_command(command)
@@ -160,7 +159,6 @@ swipe_gesture_tool = llm.Tool(
 
 def swipe_handler(direction: str) -> str:
     """Perform swipe gesture"""
-    # Assuming 1080x1920 screen
     swipes = {
         "LEFT": "800 1000 200 1000 500",
         "RIGHT": "200 1000 800 1000 500",
